@@ -5,32 +5,32 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import qa.demo.pages.RegistrationPage;
+import qa.demo.testData.TestBase;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.files.DownloadActions.click;
+import static qa.demo.testData.TestData.*;
 
-public class RegistrationFormTests {
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "2500x1700";
-    }
+public class RegistrationFormTests extends TestBase {
+
+RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void fillRegistrationForm() {
-        open("https://demoqa.com/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-        $("#firstName").setValue("Ilia");
-        $("#lastName").setValue("Khokhlov");
-        $("#userEmail").setValue("ikh@twt.it");
-        $(byText("Male")).click();
-        $("#userNumber").setValue("39329758888");
-        $("#dateOfBirthInput").click();
+        registrationPage.checkHeader();
+        registrationPage.inputFirstName(firstName);
+        registrationPage.inputLastName(lastName);
+        registrationPage.inputEmail(email);
+        registrationPage.selectGender();
+        registrationPage.inputNumber(number);
+        registrationPage.setDateOfBirthday();
+        /*$("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(5);
         $(".react-datepicker__year-select").selectOption("1994");
-        $(byXpath("//*[@class='react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend']")).click();
+        $(byXpath("//*[@class='react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend']")).click();*/
         $("#subjectsContainer").click();
         $("#subjectsInput").setValue("My subject");
         $(byText("Sports")).click();
