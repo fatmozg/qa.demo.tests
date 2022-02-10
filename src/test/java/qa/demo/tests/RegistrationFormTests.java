@@ -27,6 +27,7 @@ RegistrationPage registrationPage = new RegistrationPage();
         registrationPage.selectGender();
         registrationPage.inputNumber(number);
         registrationPage.setDateOfBirthday();
+        sleep(10000);
         /*$("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(5);
         $(".react-datepicker__year-select").selectOption("1994");

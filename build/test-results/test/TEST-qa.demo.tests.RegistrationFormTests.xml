@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="qa.demo.tests.RegistrationFormTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-02-10T17:57:10" hostname="MACBOOKPRO-CE69.station" time="5.799">
+<testsuite name="qa.demo.tests.RegistrationFormTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-02-10T21:26:05" hostname="MACBOOKPRO-CE69.station" time="7.077">
   <properties/>
-  <testcase name="fillRegistrationForm()" classname="qa.demo.tests.RegistrationFormTests" time="5.799">
-    <failure message="Element not found {.react-datepicker__month-select/option[text:12]}&#10;Expected: exist&#10;Screenshot: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644515835306.0.png&#10;Page source: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644515835306.0.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: Cannot locate option with text: 12" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {.react-datepicker__month-select/option[text:12]}
+  <testcase name="fillRegistrationForm()" classname="qa.demo.tests.RegistrationFormTests" time="7.077">
+    <failure message="Element not found {.react-datepicker__year-select/option[index:2100]}&#10;Expected: exist&#10;Screenshot: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644528371412.0.png&#10;Page source: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644528371412.0.html&#10;Timeout: 4 s.&#10;Caused by: NoSuchElementException: Cannot locate option with index: 2100" type="com.codeborne.selenide.ex.ElementNotFound">Element not found {.react-datepicker__year-select/option[index:2100]}
 Expected: exist
-Screenshot: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644515835306.0.png
-Page source: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644515835306.0.html
+Screenshot: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644528371412.0.png
+Page source: file:/Users/macbook/Desktop/qa.demo.tests/build/reports/tests/1644528371412.0.html
 Timeout: 4 s.
-Caused by: NoSuchElementException: Cannot locate option with text: 12
-	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByTexts(SelectOptionByTextOrIndex.java:44)
-	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:25)
+Caused by: NoSuchElementException: Cannot locate option with index: 2100
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByIndexes(SelectOptionByTextOrIndex.java:56)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:29)
 	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:16)
 	at com.codeborne.selenide.commands.Commands.execute(Commands.java:154)
 	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:131)
 	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:83)
 	at jdk.proxy3/jdk.proxy3.$Proxy16.selectOption(Unknown Source)
-	at qa.demo.pages.components.CalendarComponent.setBirthdayDate(CalendarComponent.java:23)
+	at qa.demo.pages.components.CalendarComponent.setBirthdayDate(CalendarComponent.java:45)
 	at qa.demo.pages.RegistrationPage.setDateOfBirthday(RegistrationPage.java:50)
 	at qa.demo.tests.RegistrationFormTests.fillRegistrationForm(RegistrationFormTests.java:29)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -108,30 +108,31 @@ Caused by: NoSuchElementException: Cannot locate option with text: 12
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
 	at java.base/java.lang.Thread.run(Thread.java:831)
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option with text: 12
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 2100
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.1.1', revision: 'e8fcc2cecf'
 System info: host: 'MACBOOKPRO-CE69.station', ip: 'fe80:0:0:0:c09:efda:1a3e:de67%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.2', java.version: '16.0.2'
 Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
-	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByTexts(SelectOptionByTextOrIndex.java:41)
+	at org.openqa.selenium.support.ui.Select.setSelectedByIndex(Select.java:301)
+	at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:176)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByIndexes(SelectOptionByTextOrIndex.java:53)
 	... 99 more
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /Users/macbook/Desktop/qa.demo.tests/build/downloads/1644515826275_3619_15
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /Users/macbook/Desktop/qa.demo.tests/build/downloads/1644528359608_4143_15
 [Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 98.0.4758.80 (resolved driver for Chrome 98)
 [Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/macbook/.cache/selenium/chromedriver/mac64/98.0.4758.80/chromedriver
-Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 49854
+Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 60081
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Feb 10, 2022 6:57:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Feb 10, 2022 10:26:01 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Feb 10, 2022 6:57:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Feb 10, 2022 10:26:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 98, so returning the closest version found: 96
-Feb 10, 2022 6:57:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Feb 10, 2022 10:26:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 98 of 96
 [Test worker] INFO com.codeborne.selenide.webdriver.HttpClientTimeouts - Changed connectTimeout from PT10S to PT10S
 [Test worker] INFO com.codeborne.selenide.webdriver.HttpClientTimeouts - Changed readTimeout from PT3M to PT3M
@@ -139,6 +140,6 @@ INFO: Found CDP implementation for version 98 of 96
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=98.0.4758.80 Platform=MAC
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.2.1
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.1.1 build revision: e8fcc2cecf
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: ChromeDriver -> ChromeDriver: chrome on MAC (3cf56a86ac51840926e6aa6ead894271)
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: ChromeDriver -> ChromeDriver: chrome on MAC (8152151ac0c56836f77921aef8fceb8d)
 ]]></system-err>
 </testsuite>

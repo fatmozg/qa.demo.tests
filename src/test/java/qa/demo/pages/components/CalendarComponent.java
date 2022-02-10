@@ -14,17 +14,38 @@ public class CalendarComponent {
         Random random = new Random();
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols();
 
-        String randomDay = String.valueOf(Math.floor(Math.random() * 28) + 1);
-        List<String> monthsList = Arrays.asList(dateFormatSymbols.getMonths());
-        String randomMonth = String.valueOf(random.nextInt(monthsList.size()));;
-        String randomYear = String.valueOf(Math.floor(Math.random() * 2004) + 1950);
+        // Random month
+        String[] monthsArr = dateFormatSymbols.getMonths();
+        int randomIndexForMonth = random.nextInt(monthsArr.length);
+        String month = monthsArr[randomIndexForMonth];
+
+        // Random year
+        int[] yearArr = new int[1000];
+        for (int i = 1900; i < 2101; i++) {
+            for (int j = 0; j < 1000; j++) {
+                yearArr[j] = i;
+            }
+        }
+        int randomIndexOfYear = random.nextInt(yearArr.length);
+        int year = yearArr[randomIndexOfYear];
+
+        // Random day
+        int[] dayArr = new int[28];
+        for (int i = 1; i < 29; i++) {
+            for (int j = 0; j < 28; j++) {
+                dayArr[j] = i;
+            }
+        }
+        int randomIndexOfDay = random.nextInt(dayArr.length);
+        int day = dayArr[randomIndexOfDay];
+
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(randomMonth);
-        $(".react-datepicker__year-select").selectOption(randomYear);
+        $(".react-datepicker__month-select").selectOption(month);
+        $(".react-datepicker__year-select").selectOption(year);
 
         String selector = "\"//*[@class='react-datepicker__day react-datepicker__day--0%s react-datepicker__day--weekend']\"";
-        String formatedSelector = String.format(selector,randomDay);
+        String formatedSelector = String.format(selector,day);
         $(byXpath(selector)).click();
     }
 }
