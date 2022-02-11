@@ -38,6 +38,7 @@ public class StateAndCityComponent {
         Random random = new Random();
         int indexOfRandomState = random.nextInt(stateArr.length);
         String state = stateArr[indexOfRandomState];
+        $("#state").click();
         SelenideElement stateElement = $("#state").$(byText(state));
         stateElement.click();
 
@@ -45,21 +46,25 @@ public class StateAndCityComponent {
         if ((stateArr[0]) == state) {
             int indexOfRandomCity = random.nextInt(cityOfNCRArr.length);
             String cityOfNCR = cityOfNCRArr[indexOfRandomCity];
+            $("#city").click();
             SelenideElement cityOfNCRElement = $("#city").$(byText(cityOfNCR));
             cityOfNCRElement.click();
         } else if ((stateArr[1]) == state) {
             int indexOfRandomCity = random.nextInt(cityOfUttarPradeshArr.length);
             String cityOfUttarPradesh = cityOfUttarPradeshArr[indexOfRandomCity];
+            $("#city").click();
             SelenideElement cityOfUttarPradeshElement = $("#city").$(byText(cityOfUttarPradesh));
             cityOfUttarPradeshElement.click();
         } else if ((stateArr[2]) == state) {
             int indexOfRandomCity = random.nextInt(cityOfHaryanaArr.length);
             String cityOfHaryana = cityOfHaryanaArr[indexOfRandomCity];
+            $("#city").click();
             SelenideElement cityOfHaryanaElement = $("#city").$(byText(cityOfHaryana));
             cityOfHaryanaElement.click();
         } else if ((stateArr[3]) == state) {
             int indexOfRandomCity = random.nextInt(cityOfRajasthanArr.length);
             String cityOfRajasthan = cityOfRajasthanArr[indexOfRandomCity];
+            $("#city").click();
             SelenideElement cityOfRajasthanElement = $("#city").$(byText(cityOfRajasthan));
             cityOfRajasthanElement.click();
         }

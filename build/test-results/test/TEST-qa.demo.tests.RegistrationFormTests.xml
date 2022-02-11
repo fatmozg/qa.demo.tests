@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="qa.demo.tests.RegistrationFormTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-11T09:42:12" hostname="MACBOOKPRO-CE69.station" time="31.805">
+<testsuite name="qa.demo.tests.RegistrationFormTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-11T11:25:49" hostname="MACBOOKPRO-CE69.station" time="11.85">
   <properties/>
-  <testcase name="fillRegistrationForm()" classname="qa.demo.tests.RegistrationFormTests" time="31.805"/>
+  <testcase name="fillRegistrationForm()" classname="qa.demo.tests.RegistrationFormTests" time="11.85"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 15 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /Users/macbook/Desktop/qa.demo.tests/build/downloads/1644572527384_5829_15
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: /Users/macbook/Desktop/qa.demo.tests/build/downloads/1644578745146_6948_15
 [Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 98.0.4758.80 (resolved driver for Chrome 98)
 [Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/macbook/.cache/selenium/chromedriver/mac64/98.0.4758.80/chromedriver
-Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 52613
+Starting ChromeDriver 98.0.4758.80 (7f0488e8ba0d8e019187c6325a16c29d9b7f4989-refs/branch-heads/4758@{#972}) on port 56208
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Feb 11, 2022 10:42:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+Feb 11, 2022 12:25:47 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-Feb 11, 2022 10:42:09 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Feb 11, 2022 12:25:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find an exact match for CDP version 98, so returning the closest version found: 96
-Feb 11, 2022 10:42:09 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Feb 11, 2022 12:25:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 INFO: Found CDP implementation for version 98 of 96
 [Test worker] INFO com.codeborne.selenide.webdriver.HttpClientTimeouts - Changed connectTimeout from PT10S to PT10S
 [Test worker] INFO com.codeborne.selenide.webdriver.HttpClientTimeouts - Changed readTimeout from PT3M to PT3M
@@ -23,6 +23,6 @@ INFO: Found CDP implementation for version 98 of 96
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=98.0.4758.80 Platform=MAC
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.2.1
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.1.1 build revision: e8fcc2cecf
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: ChromeDriver -> ChromeDriver: chrome on MAC (7963b7c4809a3ba45f774200196f9e84)
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 15: ChromeDriver -> ChromeDriver: chrome on MAC (86577ae651b113f1777539184af08fe0)
 ]]></system-err>
 </testsuite>

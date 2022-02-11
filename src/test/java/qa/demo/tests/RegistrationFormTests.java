@@ -23,6 +23,7 @@ public class RegistrationFormTests extends TestBase {
         registrationPage.inputSubject(subject);
         registrationPage.selectHobby();
         registrationPage.inputAddress(address);
+        registrationPage.selectStateAndCity();
         registrationPage.submitRegistrationForm();
 
 
