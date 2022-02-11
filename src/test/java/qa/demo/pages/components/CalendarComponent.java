@@ -1,13 +1,14 @@
 package qa.demo.pages.components;
 
+import com.codeborne.selenide.SelenideElement;
+
 import java.text.DateFormatSymbols;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
-import static com.codeborne.selenide.Selectors.byXpath;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
+import static qa.demo.testData.TestData.dayOfBD;
+import static qa.demo.testData.TestData.yearOfBD;
 
 public class CalendarComponent {
     public void setBirthdayDate () {
@@ -17,35 +18,13 @@ public class CalendarComponent {
         // Random month
         String[] monthsArr = dateFormatSymbols.getMonths();
         int randomIndexForMonth = random.nextInt(monthsArr.length);
-        String month = monthsArr[randomIndexForMonth];
-
-        // Random year
-        int[] yearArr = new int[1000];
-        for (int i = 1900; i < 2101; i++) {
-            for (int j = 0; j < 1000; j++) {
-                yearArr[j] = i;
-            }
-        }
-        int randomIndexOfYear = random.nextInt(yearArr.length);
-        int year = yearArr[randomIndexOfYear];
-
-        // Random day
-        int[] dayArr = new int[28];
-        for (int i = 1; i < 29; i++) {
-            for (int j = 0; j < 28; j++) {
-                dayArr[j] = i;
-            }
-        }
-        int randomIndexOfDay = random.nextInt(dayArr.length);
-        int day = dayArr[randomIndexOfDay];
+        String monthOfBD = monthsArr[randomIndexForMonth];
 
 
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption(month);
-        $(".react-datepicker__year-select").selectOption(year);
-
-        String selector = "\"//*[@class='react-datepicker__day react-datepicker__day--0%s react-datepicker__day--weekend']\"";
-        String formatedSelector = String.format(selector,day);
-        $(byXpath(selector)).click();
+        $(".react-datepicker__month-select").selectOption(monthOfBD);
+        $(".react-datepicker__year-select").selectOption(yearOfBD);
+        SelenideElement elementOfDay = $(".react-datepicker__month").$(byText(dayOfBD));
+        elementOfDay.click();
     }
 }

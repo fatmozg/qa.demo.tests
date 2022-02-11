@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import qa.demo.pages.components.CalendarComponent;
 import qa.demo.pages.components.GenderComponent;
+import qa.demo.pages.components.HobbyComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -17,10 +18,12 @@ public class RegistrationPage {
             emailInput = $("#userEmail").setValue(email),
             numberInput = $("#userNumber").setValue(number),
             subjectSelect = $("#subjectsContainer"),
-            subjectInput = $("#subjectsInput").setValue(subject);
+            subjectInput = $("#subjectsInput").setValue(subject),
+            addressInput = $("#currentAddress").setValue(address);
 
     GenderComponent genderComponent = new GenderComponent();
     CalendarComponent calendarComponent = new CalendarComponent();
+    HobbyComponent hobbyComponent = new HobbyComponent();
 
     public void checkHeader() {
         formTitle.shouldHave(text(textOfHeader));
@@ -50,4 +53,17 @@ public class RegistrationPage {
         calendarComponent.setBirthdayDate();
     }
 
+    public void inputSubject(String value) {
+        subjectSelect.click();
+        subjectInput.setValue(value);
+    }
+
+    public void selectHobby() {
+        hobbyComponent.selectHobby();
+    }
+
+    public void inputAddress(String value) {
+        addressInput.setValue(value);
+        $("#submit").scrollIntoView(true);
+    }
 }

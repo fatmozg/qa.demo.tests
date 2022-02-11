@@ -1,23 +1,19 @@
 package qa.demo.pages.components;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import java.util.Random;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
-import static java.lang.Math.random;
 
 public class GenderComponent {
     public void selectGender() {
-        List<String> listOfGender = new ArrayList<String>();
-        listOfGender.add("Male");
-        listOfGender.add("Female");
-        listOfGender.add("Other");
+        String[] gendersArr = new String[3];
+        gendersArr[0] = "Male";
+        gendersArr[1] = "Female";
+        gendersArr[2] = "Other";
         Random random = new Random();
-        int randomGender = random.nextInt(listOfGender.size());
-        String gender = listOfGender.get(randomGender);
+        int indexOfRandomGender = random.nextInt(gendersArr.length);
+        String gender = gendersArr[indexOfRandomGender];
 
         $(byText(gender)).click();
     }
