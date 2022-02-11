@@ -1,10 +1,10 @@
 package qa.demo.pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import qa.demo.pages.components.CalendarComponent;
 import qa.demo.pages.components.GenderComponent;
 import qa.demo.pages.components.HobbyComponent;
+import qa.demo.pages.components.StateAndCityComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -19,11 +19,13 @@ public class RegistrationPage {
             numberInput = $("#userNumber").setValue(number),
             subjectSelect = $("#subjectsContainer"),
             subjectInput = $("#subjectsInput").setValue(subject),
-            addressInput = $("#currentAddress").setValue(address);
+            addressInput = $("#currentAddress").setValue(address),
+            submitButton = $("#submit");
 
     GenderComponent genderComponent = new GenderComponent();
     CalendarComponent calendarComponent = new CalendarComponent();
     HobbyComponent hobbyComponent = new HobbyComponent();
+    StateAndCityComponent stateAndCityComponent = new StateAndCityComponent();
 
     public void checkHeader() {
         formTitle.shouldHave(text(textOfHeader));
@@ -65,5 +67,13 @@ public class RegistrationPage {
     public void inputAddress(String value) {
         addressInput.setValue(value);
         $("#submit").scrollIntoView(true);
+    }
+
+    public void selectStateAndCity() {
+        stateAndCityComponent.selectStateAndCity();
+    }
+
+    public void submitRegistrationForm() {
+        submitButton.click();
     }
 }
