@@ -4,7 +4,8 @@ import org.junit.jupiter.api.Test;
 import qa.demo.pages.RegistrationPage;
 import qa.demo.testData.TestBase;
 
-import static com.codeborne.selenide.Selenide.sleep;
+import java.io.IOException;
+
 import static qa.demo.testData.TestData.*;
 
 public class RegistrationFormTests extends TestBase {
@@ -12,7 +13,7 @@ public class RegistrationFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    void fillRegistrationForm() {
+    void fillRegistrationForm() throws IOException {
         registrationPage.checkHeader();
         registrationPage.inputFirstName(firstName);
         registrationPage.inputLastName(lastName);
@@ -20,14 +21,19 @@ public class RegistrationFormTests extends TestBase {
         registrationPage.selectGender();
         registrationPage.inputNumber(number);
         registrationPage.setDateOfBirthday();
-        registrationPage.inputSubject(subject);
+        registrationPage.inputSubject(subject1);
+        registrationPage.inputSubject(subject2);
+        registrationPage.inputSubject(subject3);
         registrationPage.selectHobby();
+        registrationPage.uploadPicture(picture);
         registrationPage.inputAddress(address);
         registrationPage.selectStateAndCity();
         registrationPage.submitRegistrationForm();
+    }
 
+    @Test
+    void checkRegistrationOutput() {
 
-        sleep(10000);
     }
 }
 

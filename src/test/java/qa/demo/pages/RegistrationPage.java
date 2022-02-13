@@ -6,6 +6,8 @@ import qa.demo.pages.components.GenderComponent;
 import qa.demo.pages.components.HobbyComponent;
 import qa.demo.pages.components.StateAndCityComponent;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static qa.demo.testData.TestData.*;
@@ -17,9 +19,9 @@ public class RegistrationPage {
             lastNameInput = $("#lastName").setValue(lastName),
             emailInput = $("#userEmail").setValue(email),
             numberInput = $("#userNumber").setValue(number),
-            subjectSelect = $("#subjectsContainer"),
-            subjectInput = $("#subjectsInput").setValue(subject),
+            subjectSelector = $("#subjectsContainer"),
             addressInput = $("#currentAddress").setValue(address),
+            pictureButton = $("#uploadPicture"),
             submitButton = $("#submit");
 
     GenderComponent genderComponent = new GenderComponent();
@@ -48,7 +50,7 @@ public class RegistrationPage {
     }
 
     public void inputNumber(String value) {
-        numberInput.setValue(value);
+        numberInput.setValue(value.replaceAll("[^0-9]", ""));
     }
 
     public void setDateOfBirthday() {
@@ -56,12 +58,16 @@ public class RegistrationPage {
     }
 
     public void inputSubject(String value) {
-        subjectSelect.click();
-        subjectInput.setValue(value);
+        subjectSelector.click();
+        $("#subjectsInput").setValue(value).pressEnter();
     }
 
     public void selectHobby() {
         hobbyComponent.selectHobby();
+    }
+
+    public void uploadPicture(File value) throws java.io.IOException {
+        pictureButton.uploadFile(value);
     }
 
     public void inputAddress(String value) {
